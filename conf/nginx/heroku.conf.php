@@ -6,7 +6,7 @@ http {
 	                  '$status $body_bytes_sent "$http_referer" '
 	                  '"$http_user_agent" "$http_x_forwarded_for" client="$http_x_fhr_client"';
 
-	access_log stdout main;
+	# access_log stdout main;
 
 	sendfile        on;
 	#tcp_nopush     on;
@@ -56,7 +56,7 @@ http {
 		root "<?=getenv('DOCUMENT_ROOT')?:getenv('HEROKU_APP_DIR')?:getcwd()?>";
 
 		error_log stderr;
-		access_log /tmp/heroku.nginx_access.<?=getenv('PORT')?:'8080'?>.log;
+		access_log /tmp/heroku.nginx_access.<?=getenv('PORT')?:'8080'?>.log main;
 
 		include "<?=getenv('HEROKU_PHP_NGINX_CONFIG_INCLUDE')?>";
 
