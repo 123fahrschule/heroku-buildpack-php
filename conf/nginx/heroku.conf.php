@@ -6,7 +6,7 @@ http {
 	                  '$status $body_bytes_sent "$http_referer" '
 	                  '"$http_user_agent" "$http_x_forwarded_for" client="$http_x_fhr_client"';
 
-	#access_log  logs/access.log  main;
+	access_log stdout main;
 
 	sendfile        on;
 	#tcp_nopush     on;
