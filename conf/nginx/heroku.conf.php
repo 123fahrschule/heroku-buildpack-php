@@ -4,7 +4,7 @@ http {
 
 	log_format  main  '$remote_addr - $remote_user "$request" '
 	                  '$status $body_bytes_sent "$http_referer" '
-	                  '"$http_user_agent" "$http_x_forwarded_for" client="$http_x_fhr_client"';
+	                  '"$http_user_agent" "$http_x_forwarded_for" client="$http_x_fhr_client""';
 
 	# access_log stdout main;
 
